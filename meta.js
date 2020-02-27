@@ -74,11 +74,11 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
-    lint: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Use ESLint to lint your code?',
-    },
+    // lint: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Use ESLint to lint your code?',
+    // },
     lintConfig: {
       when: 'isNotTest && lint',
       type: 'list',
@@ -128,11 +128,11 @@ module.exports = {
         },
       ],
     },
-    e2e: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
-    },
+    // e2e: {
+    //   when: 'isNotTest',
+    //   type: 'confirm',
+    //   message: 'Setup e2e tests with Nightwatch?',
+    // },
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
