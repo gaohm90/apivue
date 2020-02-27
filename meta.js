@@ -172,6 +172,7 @@ module.exports = {
     'src/router/**/*': 'router',
   },
   complete: function(data, { chalk }) {
+    data.autoInstall = false;  // 屏蔽自动安装
     const green = chalk.green
 
     sortDependencies(data, green)
