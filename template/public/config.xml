@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="A6035079045732" version="0.0.1">
+  	<name>{{ name }}</name>
+	<description>
+		{{ description }}
+	</description>
+	<author email="none@none.com" href="https://www.baidu.com">
+		{{ author }}
+	</author>
+	<content src="./index.html" />
+	<preference name="appBackground" value="rgba(0,0,0,0)"/>
+	<preference name="windowBackground" value="rgba(0,0,0,0)"/>
+	<preference name="frameBackgroundColor" value="rgba(255,255,255,255)"/>
+	<preference name="autoLaunch" value="true"/>
+	<preference name="autoUpdate" value="true"/>
+	<preference name="smartUpdate" value="true"/>
+	<preference name="debug" value="false"/>
+	<preference name="statusBarAppearance" value="true"/>
+	<preference name="pageBounce" value="false"/>
+	<permission name="location"/>
+	<permission name="internet"/>
+
+	
+  	<feature name="push"/>
+  	<feature name="mam"/>
+
+	<!-- <feature name="jiguangPush"/> -->
+  	<!--<feature name="umengTJ"/>-->
+  	<!--<feature name="meiQia"/>-->  
+  	<!--<feature name="audioStreamer"/>-->
+
+	<access origin="*"/>
+</widget>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,viewport-fit=cover"
+    />
+    <meta
+      name="format-detection"
+      content="telephone=no,email=no,date=no,address=no"
+    />
+    <title><%= htmlWebpackPlugin.options.name %></title>
+    <% if(process.env.NODE_ENV === 'development') { %>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <% }else {%>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <% } %>
+    <script type="text/javascript" src="js/fastclick.min.js"></script>
+  </head>
+  <body>
+    <div id="browser">
+      <page></page>
+    </div>
+    <div id="app">
+      <page></page>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  // App initialize
+  apiready = function() {
+    clearTimeout(browserInit);
+
+    Vue.prototype.$ac = api;
+
+    // Async remove dom
+    setTimeout(function() {
+      var browser = document.getElementById("browser");
+      browser.remove();
+    }, 0);
+
+    init("#app");
+  };
+
+  // Browser initialize
+  var browserInit = setTimeout(function() {
+    init("#browser");
+  }, 500);
+
+  function init(el) {
+    new Vue({
+      el: el,
+      components: {
+        page: window.pageVue
+      },
+      mounted: function() {
+        Origami.fastclick(document.body); // You must use fastclick on the mobile
+      }
+    });
+  }
+</script>
