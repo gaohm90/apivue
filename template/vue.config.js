@@ -41,6 +41,23 @@ vues.map(vue => {
 })
 
 module.exports = {
+    outputDir:'dist/widget',
+    css: {
+        loaderOptions: {
+          less: {
+            modifyVars: {                
+                hack: `true; @import "${path.join(
+                    __dirname,
+                    './src/styles/theme.less'
+                  )}";`
+
+              },
+            globalVars: {
+              primary: '#fff'
+            }
+          }
+        }
+      },
     pages,
     publicPath: '',
     filenameHashing: true,
